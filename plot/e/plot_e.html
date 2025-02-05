@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed"></script>
+</head>
+<body>
+<div id="vis"></div>
+<script type="text/javascript">
+  var spec = {"$schema":"https://vega.github.io/schema/vega-lite/v4.json","data":{"values":[{"x":1,"y":1},{"x":2,"y":2},{"x":3,"y":2.5},{"x":4,"y":2.6666666666666665},{"x":5,"y":2.708333333333333},{"x":6,"y":2.7166666666666663},{"x":7,"y":2.7180555555555554},{"x":8,"y":2.7182539682539684},{"x":9,"y":2.71827876984127},{"x":10,"y":2.7182815255731922}]},"encoding":{"x":{"field":"x","type":"quantitative"},"y":{"field":"y","scale":{"domain":[-0.5,2.5]},"type":"quantitative"}},"height":600,"mark":"line","width":800};
+  vegaEmbed('#vis', spec).then(function(result) {
+  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>

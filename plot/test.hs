@@ -4,11 +4,15 @@ module Main where
   
     import Graphics.Vega.VegaLite hiding (Sum)
     import Prelude hiding (filter, lookup, repeat)
+    import E (taylorSeries)
+
+    doubleToInt :: Double -> Int
+    doubleToInt d = floor d
 
     plot :: IO ()
     plot =
-        let x = [40.0, 40.004 .. 41.0]
-            y = map (\n -> n**10 + 1 - n**10) x
+        let x = [1.0, 2.0 .. 10.0]
+            y = map (\n -> taylorSeries 1 (doubleToInt n)) x
             plotData = dataFromColumns []
                 . dataColumn "x" (Numbers x)
                 . dataColumn "y" (Numbers y)
