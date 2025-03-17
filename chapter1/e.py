@@ -3,14 +3,12 @@ import matplotlib.pyplot as plt
 import math
 
 def taylorSeries(x, n):
-    """Aproximação de e^x usando n termos fixos."""
     result = 0.0
     for i in range(n):
         result += (x ** i) / math.factorial(i)
     return result
 
 def taylorSeries2(x, tol=1e-10):
-    """Aproximação de e^x usando critério de parada baseado na tolerância."""
     result = 1.0
     term = 1.0
     k = 1
